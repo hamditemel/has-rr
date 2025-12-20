@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HASIR | Modern Erkek Giyim</title>
+    <meta name="description" content="HASIR - Modern ve şık erkek giyim. T-shirt, pantolon, ceket ve aksesuarlar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Ionicons for Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Massive Logo -->
+        <a href="#" class="logo">HASIR</a>
+
+        <!-- Right Menu -->
+        <div class="header-right">
+            <div class="search-box">
+                <input type="text" placeholder="ARA" id="search-input">
+            </div>
+            <a href="#" id="loginBtn">GİRİŞ YAP</a>
+            <a href="#" id="registerBtn">KAYIT OL</a>
+            <a href="#" class="cart-link">SEPET <span class="cart-count">0</span></a>
+        </div>
+
+        <!-- Left Menu Toggle (Moved to Top) -->
+        <div class="header-left">
+            <button class="menu-btn-zara" id="mobile-menu-btn">MENU</button>
+        </div>
+    </header>
+
+    <!-- Fullscreen Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-menu" id="closeMenuBtn">KAPAT</button>
+        <nav class="menu-links">
+            <a href="#" class="menu-link">YENİ GELENLER</a>
+            <a href="#" class="menu-link">KOLEKSİYON</a>
+            <a href="#" class="menu-link">ERKEK</a>
+            <a href="#" class="menu-link">KADIN</a>
+            <a href="#" class="menu-link">ÇOCUK</a>
+            <a href="#" class="menu-link">AYAKKABI & ÇANTA</a>
+            <a href="#" class="menu-link">EDİTORYAL</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <button class="btn btn-hero" onclick="document.getElementById('products-section').scrollIntoView();">
+                KOLEKSİYONU GÖR
+            </button>
+        </div>
+    </section>
+
+    <!-- Categories & Products -->
+    <section id="products" class="products-section container">
+        <div class="section-header">
+            <h2 class="title">Koleksiyonu Keşfet</h2>
+
+            <!-- Filters -->
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">Tümü</button>
+                <button class="filter-btn" data-category="T-Shirt">T-Shirt</button>
+                <button class="filter-btn" data-category="Pantolon">Pantolon</button>
+                <button class="filter-btn" data-category="Ceket">Ceket</button>
+                <button class="filter-btn" data-category="Aksesuar">Aksesuar</button>
+                <button class="filter-btn" data-category="Takım Elbise">Takım Elbise</button>
+                <button class="filter-btn" data-category="Gömlek">Gömlek</button>
+                <button class="filter-btn" data-category="Ayakkabı">Ayakkabı</button>
+                <button class="filter-btn" data-category="Şort">Şort</button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="productGrid">
+            <!-- Products will be injected here by JS -->
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>BÜLTEN</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="E-POSTA ADRESİNİZ">
+                    <button type="submit">ABONE OL</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <a href="#">INSTAGRAM</a>
+                <a href="#">FACEBOOK</a>
+                <a href="#">TWITTER</a>
+                <a href="#">PINTEREST</a>
+                <a href="#">YOUTUBE</a>
+            </div>
+            <div class="footer-col">
+                <a href="#">HESABIM</a>
+                <a href="#">POLİTİKALAR</a>
+                <a href="#">MAĞAZALAR</a>
+            </div>
+            <div class="footer-col">
+                <p>&copy; 2024 HASIR.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal auth-modal" id="loginModal">
+        <div class="login-card">
+            <button class="close-modal" id="closeLogin"
+                style="position: absolute; right: 20px; top: 20px; z-index: 10;">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="login-header">
+                <h3>Giriş Yap</h3>
+            </div>
+
+            <form class="login-form" id="loginForm">
+                <div class="login-input-group">
+                    <label>E-posta Adresi</label>
+                    <input type="email" id="loginEmail" placeholder="ornek@site.com" required>
+                </div>
+                <div class="login-input-group">
+                    <label>Şifre</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+
+                <div class="login-options">
+                    <label class="login-checkbox">
+                        <input type="checkbox"> Beni Hatırla
+                    </label>
+                    <a href="#" class="login-forgot">Şifremi Unuttum?</a>
+                </div>
+
+                <button type="submit" class="login-btn">Giriş Yap</button>
+            </form>
+
+            <div class="login-footer">
+                Hesabın yok mu? <a href="#" id="openRegisterFromLogin">Kayıt Ol</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal auth-modal" id="registerModal">
+        <div class="login-card">
+            <button class="close-modal" id="closeRegister"
+                style="position: absolute; right: 20px; top: 20px; z-index: 10;">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="login-header">
+                <h3>Hesap Oluştur</h3>
+            </div>
+
+            <form class="login-form" id="registerForm">
+                <div class="login-input-group">
+                    <label>Ad Soyad</label>
+                    <input type="text" id="registerName" placeholder="Adınız Soyadınız" required>
+                </div>
+                <div class="login-input-group">
+                    <label>E-posta Adresi</label>
+                    <input type="email" id="registerEmail" placeholder="ornek@site.com" required>
+                </div>
+                <div class="login-input-group">
+                    <label>Şifre</label>
+                    <input type="password" id="registerPassword" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="login-btn">Kayıt Ol</button>
+            </form>
+
+            <div class="login-footer">
+                Zaten üye misiniz? <a href="#" id="openLoginFromRegister">Giriş Yap</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="close-modal"><ion-icon name="close-outline"></ion-icon></button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="" alt="Product Detail" id="modalImg">
+                </div>
+                <div class="modal-details">
+                    <span class="modal-category" id="modalCategory">Kategori</span>
+                    <h2 class="modal-title" id="modalTitle">Ürün Adı</h2>
+                    <p class="modal-price" id="modalPrice">0.00 TL</p>
+                    <p class="modal-desc">
+                        Bu ürün %100 pamuklu kumaştan üretilmiştir. Günlük kullanım için ideal, rahat ve şık bir kesime
+                        sahiptir.
+                        Yüksek kalite işçilik ile Türkiye'de üretilmiştir.
+                    </p>
+
+                    <div class="modal-actions">
+                        <select class="size-select">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                        <button class="btn btn-black btn-full" id="addToCartModal">Sepete Ekle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Ürün sepete eklendi!</div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Sepetim (<span id="cartTotalCount">0</span>)</h2>
+            <button class="close-cart"><ion-icon name="close-outline"></ion-icon></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be injected here -->
+            <div class="empty-cart-message">Sepetiniz şu an boş.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Toplam:</span>
+                <span id="cartTotalPrice">0 TL</span>
+            </div>
+            <button class="btn btn-black btn-full">Ödemeye Geç</button>
+        </div>
+    </div>
+    <div class="overlay" id="cartOverlay"></div>
+
+    <!-- Live Support Widget -->
+    <div class="chat-widget">
+        <button class="chat-toggle" aria-label="Canlı Destek">
+            <ion-icon name="chatbubbles-outline"></ion-icon>
+        </button>
+        <div class="chat-window">
+            <div class="chat-header">
+                <h3>Müşteri Hizmetleri</h3>
+                <button class="close-chat"><ion-icon name="close-outline"></ion-icon></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="message bot">
+                    <p>Merhaba! Size nasıl yardımcı olabilirim?</p>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Mesajınızı yazın...">
+                <button id="sendMessage"><ion-icon name="send-outline"></ion-icon></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
