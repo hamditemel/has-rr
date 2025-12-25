@@ -900,35 +900,46 @@ body {
     /* Modal mobile fixes */
     .modal:not(.auth-modal) .modal-content {
         flex-direction: column;
-        height: 100%;
-        max-height: 100dvh;
+        display: flex;
+        height: auto;
+        min-height: 100%;
         width: 100%;
         overflow-y: auto;
     }
 
     .modal:not(.auth-modal) .modal-body {
+        display: flex;
         flex-direction: column;
         width: 100%;
         height: auto;
     }
 
     .modal-image {
-        height: 50vh;
-        /* Give image reasonable height */
         width: 100%;
+        height: auto;
+        /* Remove fixed height as requested */
         flex-shrink: 0;
     }
 
     .modal-image img {
-        height: 100%;
         width: 100%;
+        height: auto;
         object-fit: cover;
+        display: block;
     }
 
     .modal-details {
         width: 100%;
-        padding: 20px;
+        padding: 16px;
+        /* Specific padding as requested */
+        text-align: left;
         height: auto;
+    }
+
+    .modal-title,
+    .modal-price {
+        word-break: break-word;
+        /* Prevent overflow */
     }
 
     .modal-title {
@@ -939,7 +950,6 @@ body {
         font-size: 0.9rem;
     }
 
-    /* Fix button cutting off */
     .modal-actions {
         padding-bottom: 30px;
     }
@@ -1775,3 +1785,4 @@ body {
         bottom: 15%;
         padding: 0 16px;
     }
+}
