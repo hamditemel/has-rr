@@ -467,12 +467,18 @@ function openModal(product) {
     document.getElementById('modalPrice').textContent = `${product.price} TL`;
 
     // Bind Add to Cart button in modal
+    // Bind Add to Cart button in modal
     const modalBtn = document.getElementById('addToCartModal');
-    modalBtn.onclick = () => {
+    const modalBtnMobile = document.getElementById('addToCartModalMobile'); // Mobile Button
+
+    const handleAddToCart = () => {
         addToCart(null, product.id);
         modal.classList.remove('active');
         document.body.style.overflow = 'auto'; // Re-enable scroll
     };
+
+    if (modalBtn) modalBtn.onclick = handleAddToCart;
+    if (modalBtnMobile) modalBtnMobile.onclick = handleAddToCart;
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden'; // Stop scrolling
