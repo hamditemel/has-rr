@@ -484,16 +484,33 @@ function openModal(product) {
     document.body.style.overflow = 'hidden'; // Stop scrolling
 }
 
-closeModalBtn.addEventListener('click', () => {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-});
+const closeBtnById = document.getElementById('closeModalBtn');
 
-// Close modal on outside click
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Close Button Event
+if (closeBtnById) {
+    closeBtnById.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeModal();
+    });
+}
+
+// Close on Outside Click
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        closeModal();
+    }
+});
+
+// Close on ESC Key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
     }
 });
 
