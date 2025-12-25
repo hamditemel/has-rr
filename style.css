@@ -734,72 +734,56 @@ body {
 @media (max-width: 768px) {
 
     /* Header optimization */
-    /* Header optimization - Option 2 Mobile Layout */
+    /* Header optimization - Search Hidden Mobile */
     .header {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        padding: 15px 0;
-        height: auto;
+        justify-content: space-between;
+        padding: 10px 20px;
+        height: 70px;
         position: relative;
-        /* For absolute positioning of menu button if needed */
     }
 
     .header-container {
-        height: auto;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        height: 100%;
     }
 
-    /* Menu Button - Position Absolute Top Left */
+    /* DOM Order: Logo, Right, Left. We want visual: Left, Logo, Right */
     .header-left {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        width: auto;
-        z-index: 10;
-    }
-
-    .header-left .search-box {
-        display: none;
+        order: 1;
+        position: static;
+        /* Remove absolute if it was set */
     }
 
     .logo {
-        font-size: 2rem;
-        position: static;
-        transform: none;
-        margin-bottom: 15px;
-        order: 1;
-    }
-
-    /* Header Right Container - Wraps Search and Icons */
-    .header-right {
         order: 2;
-        width: 100%;
+        font-size: 1.8rem;
+        position: absolute;
+        /* Center logo absolutely to ensure true center */
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .header-right {
+        order: 3;
+        width: auto;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        align-items: center;
         gap: 15px;
-        padding-bottom: 10px;
+        padding-bottom: 0;
     }
 
-    /* Search Box - Full Width (First row of wrap) */
-    .header-right .search-box {
-        display: flex;
-        /* Make visible */
-        width: 90%;
-        max-width: 90%;
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        padding: 0 10px;
-        flex-basis: 100%;
-        /* Force line break */
+    /* HIDE SEARCH BOX ON MOBILE */
+    .search-box,
+    #search-input {
+        display: none !important;
     }
 
-    /* Icons - Second row of wrap */
+    /* Icons */
     .header-right a {
         font-size: 0;
         gap: 0;
