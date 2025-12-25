@@ -474,28 +474,19 @@ h6 {
 }
 
 .menu-btn-zara {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 24px;
+    /* Matches ion-icon size */
     background: none;
     border: none;
     cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #000;
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    padding: 5px;
 }
 
-/* Add a hamburger icon style if needed, or just text */
-.menu-btn-zara::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 1px;
-    background: #000;
-    box-shadow: 0 6px 0 #000, 0 -6px 0 #000;
-    margin-right: 10px;
-}
+/* Pseudo-element removed to prevent duplicate icon */
 
 .header-right {
     position: static;
@@ -734,12 +725,12 @@ body {
 @media (max-width: 768px) {
 
     /* Header optimization - Search Hidden Mobile */
+    /* Header optimization - Mobile */
     .header {
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 20px;
+        padding: 0 20px;
         height: 70px;
         position: relative;
     }
@@ -748,32 +739,34 @@ body {
         height: 100%;
     }
 
-    /* DOM Order: Logo, Right, Left. We want visual: Left, Logo, Right */
+    /* Left Menu Button */
     .header-left {
-        order: 1;
         position: static;
-        /* Remove absolute if it was set */
+        /* Natural flow */
+        z-index: 1002;
     }
 
+    /* Logo - Strictly Centered */
     .logo {
-        order: 2;
-        font-size: 1.8rem;
         position: absolute;
-        /* Center logo absolutely to ensure true center */
         left: 50%;
-        transform: translateX(-50%);
-        margin: 0;
         top: 50%;
         transform: translate(-50%, -50%);
+        font-size: 1.8rem;
+        margin: 0;
+        z-index: 1001;
+        white-space: nowrap;
     }
 
+    /* Right Actions */
     .header-right {
-        order: 3;
         width: auto;
         display: flex;
         align-items: center;
         gap: 15px;
         padding-bottom: 0;
+        position: static;
+        z-index: 1002;
     }
 
     /* HIDE SEARCH BOX ON MOBILE */
@@ -1470,6 +1463,25 @@ body.menu-open .menu-drawer {
     width: 45%;
     /* 2 cols approx */
     white-space: nowrap;
+}
+
+/* Header Left / Menu Button */
+.header-left {
+    position: absolute;
+    left: 20px;
+}
+
+.menu-btn-zara {
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
 }
 
 /* Close Button */

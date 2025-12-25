@@ -19,7 +19,13 @@
 
 
     <!-- Header -->
+    <!-- Header -->
     <header class="header">
+        <!-- Left Menu Toggle -->
+        <div class="header-left">
+            <button class="menu-btn-zara" id="mobile-menu-btn"><ion-icon name="menu-outline"></ion-icon></button>
+        </div>
+
         <!-- Massive Logo -->
         <a href="#" class="logo">HASIR</a>
 
@@ -32,11 +38,6 @@
             <a href="#" id="registerBtn"><ion-icon name="person-add-outline"></ion-icon> KAYIT OL</a>
             <a href="#" class="cart-link"><ion-icon name="cart-outline"></ion-icon> SEPET <span
                     class="cart-count">0</span></a>
-        </div>
-
-        <!-- Left Menu Toggle (Moved to Top) -->
-        <div class="header-left">
-            <button class="menu-btn-zara" id="mobile-menu-btn">MENU</button>
         </div>
     </header>
 
@@ -79,7 +80,8 @@
             <div class="hero-text">
                 <h1>Hızlı ve sorunsuz alışveriş</h1>
             </div>
-            <button class="btn btn-hero" onclick="document.getElementById('products-section').scrollIntoView();">
+            <button class="btn btn-hero"
+                onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'});">
                 KOLEKSİYONU GÖR
             </button>
         </div>
