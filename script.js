@@ -5,7 +5,7 @@ const products = [
         name: "Özel Tasarım 'EDA' T-Shirt",
         category: "T-Shirt",
         price: 550,
-        image: "eda_tshirt.png"
+        image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=2670&auto=format&fit=crop"
     },
     {
         id: 1,
@@ -75,14 +75,14 @@ const products = [
         name: "Oversize Bej Trençkot",
         category: "Ceket",
         price: 5000,
-        image: "trenckot.jpg"
+        image: "https://images.unsplash.com/photo-1560243563-c6e7e05a4338?q=80&w=2670&auto=format&fit=crop"
     },
     {
         id: 50,
         name: "Siyah Bershka Kaban",
         category: "Ceket",
         price: 9999,
-        image: "siyah_bershka_kaban.jpg"
+        image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=2574&auto=format&fit=crop"
     },
     // Gömlekler
     {
@@ -148,7 +148,7 @@ const products = [
         name: "Lacivert Kargo Şort",
         category: "Şort",
         price: 700,
-        image: "lacivert_kargo_sort.jpg"
+        image: "https://images.unsplash.com/photo-1565545641323-2895f32b70f0?q=80&w=2670&auto=format&fit=crop"
     },
     // Ekstra T-Shirt / Sweatshirt
     {
@@ -273,7 +273,7 @@ const products = [
         name: "Kahverengi Deri Ayakkabı",
         category: "Ayakkabı",
         price: 2600,
-        image: "kahverengi_deri_ayakkabi.png"
+        image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2612&auto=format&fit=crop"
     },
     {
         id: 37,
@@ -302,7 +302,7 @@ const products = [
         name: "Kahverengi Polo",
         category: "T-Shirt",
         price: 850,
-        image: "kahverengi_polo.jpg"
+        image: "https://images.unsplash.com/photo-1596516109370-29001ec8ec36?q=80&w=2670&auto=format&fit=crop"
     },
     {
         id: 41,
@@ -337,7 +337,7 @@ const products = [
         name: "Bordo Polo Yaka",
         category: "T-Shirt",
         price: 900,
-        image: "bordo_polo.jpg"
+        image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=2670&auto=format&fit=crop"
     },
     {
         id: 46,
