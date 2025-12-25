@@ -654,22 +654,82 @@ if (chatInput) {
 }
 
 
-// Menu Toggle Logic
+// Menu Toggle Logic (Side Drawer - ROBUST)
 const menuBtn = document.getElementById('mobile-menu-btn');
+const menuDrawer = document.getElementById('menuDrawer');
 const menuOverlay = document.getElementById('menuOverlay');
 const closeMenuBtn = document.getElementById('closeMenuBtn');
+const menuLinks = document.querySelectorAll('.menu-link'); // Select all links
 
-if (menuBtn && menuOverlay && closeMenuBtn) {
-    menuBtn.addEventListener('click', () => {
-        menuOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
+function openMenu() {
+    document.body.classList.add('menu-open');
+    document.documentElement.style.overflow = 'hidden'; // Lock HTML scroll
+    document.body.style.overflow = 'hidden';       // Lock Body scroll
+}
 
-    closeMenuBtn.addEventListener('click', () => {
-        menuOverlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
+function closeMenu() {
+    document.body.classList.remove('menu-open');
+    document.documentElement.style.overflow = '';  // Restore HTML
+    document.body.style.overflow = '';        // Restore Body
+}
+
+if (menuBtn) {
+    menuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openMenu();
     });
 }
+
+if (closeMenuBtn) {
+    closeMenuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeMenu();
+    });
+}
+
+if (menuOverlay) {
+    menuOverlay.addEventListener('click', closeMenu);
+}
+
+// Close menu when a link is clicked & Filter Products
+menuLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Close menu first
+        closeMenu();
+
+        // Get Category
+        const category = link.getAttribute('data-category');
+
+        // If category exists, filter products
+        if (category) {
+            renderProducts(category);
+
+            // Update Active State on Filter Buttons
+            filterBtns.forEach(btn => {
+                if (btn.getAttribute('data-category') === category) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Smooth Scroll to Products
+            const productSection = document.getElementById('products');
+            if (productSection) {
+                setTimeout(() => {
+                    productSection.scrollIntoView({ behavior: 'smooth' });
+                }, 300); // Slight delay to allow menu close animation
+            }
+        }
+    });
+});
+
+// Close on ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+        closeMenu();
+    }
+});
 
 // --- PROFESSIONAL AUTH LOGIC ---
 
