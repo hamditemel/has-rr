@@ -1673,3 +1673,116 @@ body {
         transform: translate3d(4px, 0, 0);
     }
 }
+
+/* === MOBIL: TASMA / YAN KAYDIRMA KAPAT === */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* img/video gibi şeyler taşmasın */
+img,
+video,
+svg,
+canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* iOS/Android saçma zoom taşmalarını azaltır */
+* {
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+
+    /* header içindeki her şeyi sığdır */
+    header,
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 12px;
+        flex-wrap: nowrap;
+    }
+
+    /* logo devse küçült */
+    .logo,
+    .header-logo,
+    .brand,
+    .site-logo {
+        max-width: 140px;
+    }
+
+    .logo img,
+    .header-logo img,
+    .brand img,
+    .site-logo img {
+        height: 32px;
+        width: auto;
+    }
+
+    /* Menü yazısı çok yer kaplıyorsa küçült */
+    .menu,
+    .menu-text {
+        font-size: 14px;
+    }
+
+    /* Sağdaki ikonlar sıkışmasın */
+    .header-right,
+    .actions,
+    .icons {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* hero alanı ekran gibi davransın */
+    .hero,
+    .hero-section,
+    .banner,
+    .main-hero {
+        position: relative;
+        min-height: 60vh;
+        overflow: hidden;
+    }
+
+    /* hero görseli tam otursun */
+    .hero img,
+    .hero-section img,
+    .banner img,
+    .main-hero img {
+        width: 100%;
+        height: 60vh;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* buton ve yazı ortalansın */
+    .hero-content,
+    .banner-content,
+    .hero-text {
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%, -50%);
+        width: min(92%, 420px);
+        text-align: center;
+        padding: 12px;
+    }
+
+    .hero-content button,
+    .banner-content button,
+    .hero-text button {
+        width: 100%;
+    }
+}
