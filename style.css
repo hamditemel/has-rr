@@ -734,40 +734,80 @@ body {
 @media (max-width: 768px) {
 
     /* Header optimization */
-    /* Header optimization */
+    /* Header optimization - Option 2 Mobile Layout */
     .header {
-        padding: 10px 20px;
-        height: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        height: auto;
+        position: relative;
+        /* For absolute positioning of menu button if needed */
     }
 
     .header-container {
-        height: 100%;
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .logo {
-        font-size: 1.8rem;
-        top: 50%;
-        transform: translate(-50%, -50%);
+    /* Menu Button - Position Absolute Top Left */
+    .header-left {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: auto;
+        z-index: 10;
     }
 
     .header-left .search-box {
         display: none;
     }
 
-    /* Hide text labels in header right, keep icons */
-    .header-right {
-        gap: 15px;
+    .logo {
+        font-size: 2rem;
+        position: static;
+        transform: none;
+        margin-bottom: 15px;
+        order: 1;
     }
 
+    /* Header Right Container - Wraps Search and Icons */
+    .header-right {
+        order: 2;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding-bottom: 10px;
+    }
+
+    /* Search Box - Full Width (First row of wrap) */
+    .header-right .search-box {
+        display: flex;
+        /* Make visible */
+        width: 90%;
+        max-width: 90%;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0 10px;
+        flex-basis: 100%;
+        /* Force line break */
+    }
+
+    /* Icons - Second row of wrap */
     .header-right a {
         font-size: 0;
-        /* Hide text */
         gap: 0;
+        display: inline-flex;
     }
 
     .header-right ion-icon {
         font-size: 1.6rem;
-        /* Make icons slightly larger */
     }
 
     .cart-count {
