@@ -2,10 +2,10 @@
 const products = [
     {
         id: 99,
-        name: "Özel Tasarım 'EDA' T-Shirt",
+        name: "Özel Tasarım 'BUSE' T-Shirt",
         category: "T-Shirt",
         price: 550,
-        image: "images/eda_tshirt.jpg"
+        image: "images/buse_tshirt.jpg"
     },
     {
         id: 1,
