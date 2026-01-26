@@ -1,12 +1,6 @@
 // Mock Data
 const products = [
-    {
-        id: 99,
-        name: "Özel Tasarım 'BUSE' T-Shirt",
-        category: "T-Shirt",
-        price: 550,
-        image: "images/buse_tshirt.jpg"
-    },
+
     {
         id: 1,
         name: "Basic Keten T-Shirt",
